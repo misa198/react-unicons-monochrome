@@ -3,8 +3,6 @@ import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
-import copy from "rollup-plugin-copy";
-import url from "@rollup/plugin-url";
 
 const packageJson = require("./package.json");
 
@@ -27,27 +25,7 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
-      postcss({
-        // to css
-        extract: true,
-        minimize: true,
-        modules: {
-          generateScopedName: "[name]__[local]___[hash:base64:5]",
-        },
-      }),
-      copy({
-        targets: [
-          {
-            src: ["src/assets/fonts/solid/*.woff2"],
-            dest: "dist/fonts/solid",
-          },
-        ],
-      }),
-      url({
-        include: ["**/*.woff2"],
-        limit: Infinity,
-        fileName: "[dirname][name][extname]",
-      }),
+      postcss(),
     ],
   },
   {
