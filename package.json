@@ -1,0 +1,57 @@
+{
+  "name": "@misa198/react-unicons-monochrome",
+  "version": "1.0.0",
+  "description": "1000+ vector icons as easy to use React Components",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "rollup": "rollup -c --bundleConfigAsCjs",
+    "monochrome": "node tools/monochrome.js",
+    "solid": "node tools/solid.js"
+  },
+  "author": "Iconscout,misa198",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^10.0.1",
+    "@rollup/plugin-url": "^8.0.1",
+    "@types/react": "^18.0.26",
+    "postcss": "^8.4.19",
+    "prettier": "^2.8.0",
+    "rollup": "^3.6.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-dts": "^5.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "keywords": [
+    "unicons",
+    "react-unicons",
+    "icons",
+    "iconscout",
+    "vector",
+    "icons"
+  ],
+  "bugs": {
+    "url": "https://github.com/misa198/react-unicons-monochrome/issues"
+  },
+  "homepage": "https://github.com/misa198/react-unicons-monochrome",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misa198/react-unicons-monochrome.git"
+  }
+}

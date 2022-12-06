@@ -1,0 +1,19 @@
+.uim-primary {
+  opacity: 1;
+}
+
+.uim-secondary {
+  opacity: 0.7;
+}
+
+.uim-tertiary {
+  opacity: 0.5;
+}
+
+.uim-quaternary {
+  opacity: 0.25;
+}
+
+.uim-quinary {
+  opacity: 0;
+}
