@@ -11,12 +11,10 @@ import '../../assets/styles/monochrome.css';
 
 interface Props {
   size?: number;
-  color?: string;
 }
 
 export const ${name}: React.FC<Props> = ({
   size = 24,
-  color = 'inherit',
 }) => {
   return (
     <Wrapper size={size} color={color} className="unicons unicons-monochrome">
@@ -31,41 +29,36 @@ let index = "";
 let components = [];
 
 monochrome.forEach(({ name, svg }) => {
-  
-    const componentName = `M${toPascalCase(name)}`;
-    let jsx = svg
+  const componentName = `M${toPascalCase(name)}`;
+  let jsx = svg
     .replace(/class/g, "className")
-    .replace(/enable-background/g, "enableBackground") 
+    .replace(/enable-background/g, "enableBackground");
 
-    const styles = jsx.match(/style=".+:.+"/g)
-    if (styles) {
-      styles.forEach(style => {
-        const paths = (style.split('"'))
-        let res = paths[0]
-        const kv = paths[1].split(":")
-        res += `{{${kv[0]}: "${kv[1]}"}}`
-        jsx = jsx.replace(new RegExp(style, 'g'), res)
-      })
-    }
-
-    const content = createComponent(
-      componentName,
-      jsx
-    );
-    const filePath = path.join(
-      __dirname,
-      `../src/libs/monochrome/${componentName}.tsx`
-    );
-    components.push(componentName);
-    index += `import { ${componentName} } from './libs/monochrome/${componentName}';\n`;
-    prettier.resolveConfig(filePath).then((options) => {
-      const formatted = prettier.format(content, {
-        ...options,
-        filepath: filePath,
-      });
-      fs.writeFileSync(filePath, formatted);
+  const styles = jsx.match(/style=".+:.+"/g);
+  if (styles) {
+    styles.forEach((style) => {
+      const paths = style.split('"');
+      let res = paths[0];
+      const kv = paths[1].split(":");
+      res += `{{${kv[0]}: "${kv[1]}"}}`;
+      jsx = jsx.replace(new RegExp(style, "g"), res);
     });
-  
+  }
+
+  const content = createComponent(componentName, jsx);
+  const filePath = path.join(
+    __dirname,
+    `../src/libs/monochrome/${componentName}.tsx`
+  );
+  components.push(componentName);
+  index += `import { ${componentName} } from './libs/monochrome/${componentName}';\n`;
+  prettier.resolveConfig(filePath).then((options) => {
+    const formatted = prettier.format(content, {
+      ...options,
+      filepath: filePath,
+    });
+    fs.writeFileSync(filePath, formatted);
+  });
 });
 
 index += `\nexport { ${components.join(", ")} };\n`;

@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 interface WrapperProps {
   size: number;
-  color: string;
 }
 
 export const Wrapper = styled.span<WrapperProps>`
@@ -11,12 +10,7 @@ export const Wrapper = styled.span<WrapperProps>`
     height: ${(props) => props.size}px;
 
     * {
-      fill: ${(props) => props.color};
+      fill: currentColor;
     }
-  }
-
-  & > i {
-    font-size: ${(props) => props.size}px;
-    color: ${(props) => props.color};
   }
 `;

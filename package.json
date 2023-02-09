@@ -1,6 +1,6 @@
 {
   "name": "@misa198/react-unicons-monochrome",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "description": "1000+ vector icons as easy to use React Components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
