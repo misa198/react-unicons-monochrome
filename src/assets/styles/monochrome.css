@@ -1,3 +1,8 @@
+svg.misa198-unicons,
+svg.misa198-unicons * {
+  fill: currentColor;
+}
+
 .uim-primary {
   opacity: 1;
 }

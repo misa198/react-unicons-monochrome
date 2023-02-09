@@ -6,21 +6,10 @@ const { toPascalCase } = require("./utils/converter");
 
 const createComponent = (name, jsx) => `
 import React from 'react';
-import { Wrapper } from '../common/Wrapper';
 import '../../assets/styles/monochrome.css';
 
-interface Props {
-  size?: number;
-}
-
-export const ${name}: React.FC<Props> = ({
-  size = 24,
-}) => {
-  return (
-    <Wrapper size={size} className="unicons unicons-monochrome">
-      ${jsx}
-    </Wrapper>
-  );
+export const ${name}: React.FC = () => {
+  return (${jsx});
 };
 `;
 
@@ -45,7 +34,11 @@ monochrome.forEach(({ name, svg }) => {
     });
   }
 
-  const content = createComponent(componentName, jsx);
+  let content = createComponent(componentName, jsx);
+  const needReplace = "return (<svg";
+  const replace = "return (<svg className='misa198-unicons'";
+  content = content.replace(needReplace, replace);
+
   const filePath = path.join(
     __dirname,
     `../src/libs/monochrome/${componentName}.tsx`

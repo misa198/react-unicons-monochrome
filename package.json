@@ -1,6 +1,6 @@
 {
   "name": "@misa198/react-unicons-monochrome",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "1000+ vector icons as easy to use React Components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -29,10 +29,7 @@
     "tslib": "^2.4.1",
     "typescript": "^4.9.3"
   },
-  "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
