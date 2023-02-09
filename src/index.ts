@@ -993,6 +993,7 @@ import { MSnapchatAlt } from "./libs/monochrome/MSnapchatAlt";
 import { MSnapchatGhost } from "./libs/monochrome/MSnapchatGhost";
 import { MSnapchatSquare } from "./libs/monochrome/MSnapchatSquare";
 import { MSnowFlake } from "./libs/monochrome/MSnowFlake";
+import { MSnowflake } from "./libs/monochrome/MSnowflake";
 import { MSnowflakeAlt } from "./libs/monochrome/MSnowflakeAlt";
 import { MSocialDistancing } from "./libs/monochrome/MSocialDistancing";
 import { MSort } from "./libs/monochrome/MSort";
@@ -2194,6 +2195,7 @@ export {
   MSnapchatGhost,
   MSnapchatSquare,
   MSnowFlake,
+  MSnowflake,
   MSnowflakeAlt,
   MSocialDistancing,
   MSort,

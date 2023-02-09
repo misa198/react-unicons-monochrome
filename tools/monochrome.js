@@ -17,7 +17,7 @@ export const ${name}: React.FC<Props> = ({
   size = 24,
 }) => {
   return (
-    <Wrapper size={size} color={color} className="unicons unicons-monochrome">
+    <Wrapper size={size} className="unicons unicons-monochrome">
       ${jsx}
     </Wrapper>
   );

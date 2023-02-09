@@ -10,8 +10,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
-    "monochrome": "node tools/monochrome.js",
-    "solid": "node tools/solid.js"
+    "monochrome": "node tools/monochrome.js"
   },
   "author": "Iconscout,misa198",
   "license": "Apache-2.0",
